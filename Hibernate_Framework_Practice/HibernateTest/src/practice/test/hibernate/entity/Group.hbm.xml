@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="practice.test.hibernate.entity">
+	<class name="Group" table="group_table">
+		<id name="id" column="group_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="groupname" column="group_name"><.property>
+		
+		<set name="users">
+			
+			<!--name of foreign key-->
+			<key column="group_id"></key>
+			
+			<one-to-many class="practice.test.hibernate.entity.User"/>		
+		</set>
+	</class>
+	
+</hibernate-mapping>

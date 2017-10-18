@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+
+        <!-- Apply mysql settings-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!-- url and database of jdbc -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+
+        <!-- database username -->
+        <property name="connection.username">root</property>
+
+        <!-- database password-->
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <!-- <property name="connection.pool_size">1</property>-->
+
+        <!-- dialect for DBMS-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+   
+        <property name="show_sql">true</property>
+
+        <!-- set format to be sql -->
+        <property name="format_sql">true</property>
+
+       <!--establish table structure when loading hibernate for the fist time, and update the table structure later on-->
+        <property name="hbm2ddl.auto">update</property>         
+
+        <!-- mapping file-->
+        <mapping resource="practice/test/hibernate/entity/User.hbm.xml"/>
+		<mapping resource="pracitce/test/hibernate/entity/Group.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>
